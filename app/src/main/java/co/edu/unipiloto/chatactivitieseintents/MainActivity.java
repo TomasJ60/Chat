@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSend = findViewById(R.id.buttonSend);
         listViewMessages = findViewById(R.id.listViewMessages);
 
-        // Inicializar la lista de mensajes y el adaptador
+
         messageList = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, messageList);
         listViewMessages.setAdapter(adapter);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     // Enviar el mensaje a la otra actividad
                     Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                     intent.putExtra("message", mensaje);
-                    startActivityForResult(intent, 1);  // Aquí utilizamos startActivityForResult
+                    startActivityForResult(intent, 1);
                 }
             }
         });

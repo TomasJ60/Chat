@@ -54,7 +54,7 @@ public class MainActivity2 extends AppCompatActivity {
         if (receivedMessage != null) {
             messageList.add("Planeador: " + receivedMessage);
             adapter.notifyDataSetChanged();
-            saveMessagesToPrefs(messageList); // Guardar el historial actualizado
+            saveMessagesToPrefs(messageList);
         }
 
         buttonSend.setOnClickListener(v -> {
@@ -79,7 +79,7 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 
-    // Guardar mensajes en SharedPreferences
+    // Guardar mensajes
     private void saveMessagesToPrefs(ArrayList<String> messages) {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         StringBuilder messagesString = new StringBuilder();
@@ -90,7 +90,7 @@ public class MainActivity2 extends AppCompatActivity {
         editor.apply();
     }
 
-    // Cargar mensajes desde SharedPreferences
+    // Cargar mensajes
     private ArrayList<String> loadMessagesFromPrefs() {
         String savedMessages = sharedPreferences.getString("messages", "");
         ArrayList<String> messages = new ArrayList<>();
